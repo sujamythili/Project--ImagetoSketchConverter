@@ -41,7 +41,8 @@ slite.sidebar.title("Please Upload your image")
 img = Image.open("upload.jpg")
 image = slite.image(img)
 
-uploaded_file = slite.sidebar.file_uploader(type=['png', 'jpg', 'jpeg'])
+# sidebar with browse file option
+uploaded_file = slite.sidebar.file_uploader(" ", type=['png', 'jpg', 'jpeg'])
 
 if uploaded_file is not None:  
     image.image(uploaded_file)
