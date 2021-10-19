@@ -1,0 +1,15 @@
+streamlit==0.87.0
+pillow==8.0.1
+numpy==1.20.2
+pybase64==1.2.0
+opencv-python==4.5.3.56
+
+
+#OpenCV is the huge open-source library for the computer vision, machine learning, and image processing
+#Streamlit is an open-source Python library that makes it easy to create and share beautiful, custom web apps for machine learning and data science. 
+#you can build and deploy powerful data apps
+#NumPy is a Python library used for working with arrays
+#Python io module allows us to manage the file-related input and output operations
+#The Python time() function retrieves the current time
+#The base64 module is used to encode and decode data
+#Pillow is a Python Imaging Library (PIL), which adds support for opening, manipulating, and saving images
