@@ -1,4 +1,3 @@
-
 import streamlit as slite
 import numpy as npy
 import cv2
@@ -24,18 +23,6 @@ def sketch_image_download(img,filename,text):
     return href
 
 def convert_image_to_sketch(img):
-    #asarray() function is used when we want to convert input to an array.
-    #cv2. imdecode() function reads data from specified memory cache and converts (decodes) data into image format; It is mainly used for compressing image data format to facilitate network transmission
-    #cv2. cvtColor() method is used to convert an image from one color space to another. 
-    #the bitwise NOT function flips pixel values. All pixels that are greater than zero are set to zero, and all pixels that are equal to zero are set to 255.
-    #You can use GaussianBlur() method of cv2 library to blur an image.
-    #Grayscaling - Converting image from other spaces i.e, RGB,CMYK to gray 
-    
-    #Python OpenCV has several filtering techniques to perform smoothing operations on images, like - Gaussian Filtering, Median Filtering, 
-    #Bilateral Filtering. Images can contain different types of noise, especially because of camera sensor. 
-    #These smoothing techniques are generally used to reduce noise, reduce detail, and so on. Each pixel in an image gets multiplied by Gaussian Kernel. It means, a Gaussian Kernel is a square array of pixels.    
-    #sample synatx - cv2.GaussianBlur(src, ksize, sigma_x, dst, sigma_y, border_type)
-
     file_bytes = npy.asarray(bytearray(img), dtype=npy.uint8)
     cvImage = cv2.imdecode(file_bytes, 1)
         
