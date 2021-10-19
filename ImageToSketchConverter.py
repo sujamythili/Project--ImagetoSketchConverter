@@ -59,10 +59,10 @@ if slite.sidebar.button("Convert to Pencil Sketch"):
             sketchImage = convert_image_to_sketch(uploaded_file.read())
             
             time.sleep(2)
-            slite.success('Converted Successfully!')
-            slite.success('Click "Download Image" below the sketched image to download the image')
+            #slite.success('Converted Successfully!')
+            #slite.success('Click "Download Image" below the sketched image to download the image')
             image = slite.image(sketchImage)
-            slite.sidebar.success("Please scroll down for your sketched image!")
+            #slite.sidebar.success("Please scroll down for your sketched image!")
 
 
 if slite.button("Download Image"):
