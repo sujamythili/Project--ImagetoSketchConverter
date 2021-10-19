@@ -1,4 +1,4 @@
-import streamlit as st
+import streamlit as slite
 import time
 import cv2
 from PIL import Image
@@ -6,7 +6,7 @@ import numpy as np
 import io
 import base64
 
-st.set_page_config(
+slite.set_page_config(
      page_title="Convert Image to Pencil Sketch",
      initial_sidebar_state="expanded",
 )
@@ -31,44 +31,44 @@ def convert_image_to_sketch(img):
     
     return sketchImage
     
-st.title("Convert your Image to Pencil Sketch")
+slite.title("Convert your Image to Pencil Sketch")
 
-st.sidebar.title("Please Upload your image")
+slite.sidebar.title("Please Upload your image")
 
-st.set_option('deprecation.showfileUploaderEncoding', False)
+slite.set_option('deprecation.showfileUploaderEncoding', False)
 
 img = Image.open("upload.jpg")
-image = st.image(img)
+image = slite.image(img)
 
-uploaded_file = st.sidebar.file_uploader(" ", type=['png', 'jpg', 'jpeg'])
+uploaded_file = slite.sidebar.file_uploader(" ", type=['png', 'jpg', 'jpeg'])
 
 if uploaded_file is not None:  
     image.image(uploaded_file)
 
-if st.sidebar.button("Convert to Pencil Sketch"):
+if slite.sidebar.button("Convert to Pencil Sketch"):
      
      if uploaded_file is None:
-         st.sidebar.error("Please upload a image to convert")
+         slite.sidebar.error("Please upload a image to convert")
         
      else:
-        with st.spinner('Converting into Pencil Sketch...'):
+        with slite.spinner('Converting into Pencil Sketch...'):
             
             sketchImage = convert_image_to_sketch(uploaded_file.read())
             
             time.sleep(2)
             #image.image(sketchImage)
-            st.success('Converted!')
-            st.success('Click "Download Image" below the sketched image to download the image')
-            image = st.image(sketchImage)
-            st.sidebar.success("Please scroll down for your sketched image!")
+            slite.success('Converted!')
+            slite.success('Click "Download Image" below the sketched image to download the image')
+            image = slite.image(sketchImage)
+            slite.sidebar.success("Please scroll down for your sketched image!")
 
 
-if st.button("Download Image"):
+if slite.button("Download Image"):
     if uploaded_file:
         sketchedImage = convert_image_to_sketch(uploaded_file.read())
         image.image(sketchedImage)
         result = Image.fromarray(sketchedImage)
-        st.success("Press the below Link")
-        st.markdown(sketch_image_download(result,"sketched.jpg",'Download '+"Sketched.jpg"), unsafe_allow_html=True)
+        slite.success("Press the below Link")
+        slite.markdown(sketch_image_download(result,"sketched.jpg",'Download '+"Sketched.jpg"), unsafe_allow_html=True)
     else:
-        st.error("Please upload a image first")
+        slite.error("Please upload a image first")
